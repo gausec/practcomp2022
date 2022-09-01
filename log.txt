@@ -78,3 +78,19 @@
    78  git push
    79  history
    80  history > log.txt
+   81  git status
+   82  git add log.txt
+   83  git commit -m "added log.txt"
+   84  git push
+   85  git status
+   86  nano README.md
+   87  git add
+   88  git add README.md
+   89  git commit -m "added a new README file"
+   90  git push
+   91  nano README.md
+   92  git add README.md
+   93  git commit -m "help me god"
+   94  git push
+   95  git status
+   96  history > log.txt
