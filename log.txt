@@ -1,0 +1,80 @@
+    1  pwd
+    2  ls /home
+    3  pwd
+    4  cd downloads
+    5  cd Downloads/
+    6  cd
+    7  cd examples.desktop
+    8  cd
+    9  mkdir
+   10  mkdir praccomp
+   11  ls
+   12  cd praccomp
+   13  test.txt
+   14  touch test.txt
+   15  ls
+   16  ls -la
+   17  ls ..
+   18  ls-l
+   19  ls - l
+   20  ls- l
+   21  ls - lh
+   22  ls-lh
+   23  ls -lh
+   24  ls -lah
+   25  echo $PATH
+   26  echo $USER
+   27  nano test.txt
+   28  rm test.txt
+   29  ls
+   30  touch test.txt
+   31  mkdir blah
+   32  ls
+   33  rm blah
+   34  rmdir blah
+   35  mkdir blah
+   36  touch blah/test2.txt
+   37  rmdir blah
+   38  re -r blah
+   39  rm -r blah
+   40  cd
+   41  wget
+   42  wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+   43  ls
+   44  bash Miniconda3-latest-Linux-x86_64.sh 
+   45  conda init
+   46  source conda
+   47  xonda init base
+   48  conda init
+   49  exit
+   50  conda init
+   51  pwd
+   52  ls
+   53  conda init
+   54  echo good job
+   55  echo good work
+   56  pwd
+   57  miniconda3/
+   58  ls miniconda3/
+   59  head miniconda3/
+   60  conda install mamba -c conda-forge
+   61  mamba install htop
+   62  mamba install htop -c conda-forge
+   63  htop
+   64  cd praccomp
+   65  git
+   66  git clone https://github.com/gausec/practcomp2022.git
+   67  cd practcomp2022/
+   68  ls
+   69  nano README.md
+   70  git status
+   71  git add README.md
+   72  git status
+   73  git commit -m "added README.md"
+   74  git config --global user.email "carolgause@gmail.com"
+   75  git config --global user.name "Carol "loves birds"  Gause"
+   76  git commit -m "added README.md"
+   77  git status
+   78  git push
+   79  history
+   80  history > log.txt
