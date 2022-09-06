@@ -38,3 +38,12 @@ Ordered
 - two fish
 - red fish
 - blue fish
+
+##Images
+! [cat, astronaut]( https://assets.ozy.com/ozy-prod/2019/07/gettyimages103741992copy.jpg?width=4872&height=2741&fit=cover)
+! [test 2] (https://m.media-amazon.com/images/M/MV5BNDRkMTNiNjgtZDIyOC00NmE1LTlkZjEtMGZiNTcyZDQ0NjcxXkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_.jpg)
+
+##URLs
+https://www.imdb.com/title/tt0092455/
+[click here] (https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiGy5O4k4H6AhWpMlkFHdyjDFUQyCl6BAgXEAM&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ&usg=AOvVaw0aHtehaphMhOCAkCydRLZU]
+
