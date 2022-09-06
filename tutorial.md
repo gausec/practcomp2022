@@ -40,7 +40,7 @@ Ordered
 - blue fish
 
 ##Images
-! [cat, astronaut] (https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3NwYWNlLWNhdC0yLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6ODI4fSwidG9Gb3JtYXQiOiJhdmlmIn19)
+![cat, astronaut](https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3NwYWNlLWNhdC0yLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6ODI4fSwidG9Gb3JtYXQiOiJhdmlmIn19)
 
 
 ##URLs
@@ -76,13 +76,12 @@ x <- 4^2
 
 ##Tables
 First header|Second header
---------------------------
+------------|-------------
 one thing   | another
-____________|_____________
 
 ## EMOJI
 
 :bird:
-:firework:
 :sparkle:
 :shrug:
+
