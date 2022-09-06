@@ -44,8 +44,9 @@ Ordered
 
 
 ##URLs
-https://www.imdb.com/title/tt0092455/
-[click here] (https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiGy5O4k4H6AhWpMlkFHdyjDFUQyCl6BAgXEAM&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ&usg=AOvVaw0aHtehaphMhOCAkCydRLZU]
+
+[click here](https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley)
+
 
 
 ## Backslash escape
@@ -72,3 +73,16 @@ x <- 4^2
 - [] this is an incomplete item
 - [x] this is a complete item
 - [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> support>?
+
+##Tables
+First header|Second header
+--------------------------
+one thing   | another
+____________|_____________
+
+## EMOJI
+
+:bird:
+:firework:
+:sparkle:
+:shrug:
