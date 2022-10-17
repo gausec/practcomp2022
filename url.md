@@ -1,2 +1,0 @@
-# Secret token
-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
