@@ -1,0 +1,480 @@
+---
+title: "BIOL 4800/6220_Fall2022Tutorial"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
+---
+
+# R basic
+
+## Introduction
+
+### R as a calculator
+```{r}
+1+200
+```
+```{r}
+2^2
+```
+```{r}
+7/2
+```
+```{r}
+3487525*4097520
+```
+```{r}
+cos(1)
+```
+```{r}
+exp(0)
+```
+```{r}
+1 == 1 #asking a question, is 1=1?
+```
+```{r}
+1>= 1
+```
+```{r}
+1>1
+```
+
+```{r}
+1!= 2 #is 1 not equal to 2?
+```
+
+```{r}
+x <- 10
+x
+```
+```{r}
+y <- x+x
+y
+```
+### Vectorization (list-making)
+
+```{r}
+1:5
+```
+
+```{r}
+2^(1:5)
+```
+
+```{r}
+log10(1:5)
+```
+
+### Environment 
+```{r}
+ls() #list of everything open/ created/ defined
+```
+```{r}
+rm(x) #removes a variable, useful for clearing up memory space
+```
+
+```{r}
+
+```
+## Package Management 
+
+```{r}
+installed.packages()
+```
+```{r}
+#install a package
+#install.packages("Rtools", dependencies=TRUE)
+```
+
+## Project management
+ 1. set up management structure
+ 2. Discuss avoiding redundancy of files
+ 3.Make sure to use version control
+```
+
+
+```## Getting Help
+?plot
+
+```{r}
+help(plot)
+
+```
+```{r}
+vignette("FAQ-vegan")
+```
+```{r}
+citation("vegan")
+```
+
+## Data and their formats
+
+
+
+
+
+
+```{r}
+cats <- data.frame(coat = c ("callico","tabby","black"),
+                   weight = c(2.1,5,3.2),
+                   likes_string = c(1,0,1))
+```
+```{r}
+write.csv(cats,file = "./cats.csv")
+```
+```{r}
+cats
+```
+```{r}
+cats$coat
+```
+
+```{r}
+paste("my cat is", cats$coat, ", and it weighs" , cats$weight, " kg.", sep=" ")
+```
+
+### DATA TYPES
+
+```{r}
+typeof(cats$coat)
+```
+
+```{r}
+typeof(cats$weight)
+```
+```{r}
+typeof(cats$likes_string)
+
+```
+```{r}
+typeof(1i)
+```
+
+```{r}
+typeof(FALSE)
+```
+```{r}
+typeof(TRUE)
+
+```
+```{r}
+typeof(T)
+```
+```{r}
+typeof(F)
+```
+```{r}
+typeof(cats)
+```
+
+```{r}
+file.show("./cats.csv")
+```
+
+```{r}
+cats$likes_string <- as.logical(cats$likes_string)
+```
+
+```{r}
+typeof(cats$likes_string)
+```
+```{r}
+cats$likes_string
+```
+
+```{r}
+z <- seq(10)
+```
+
+```{r}
+class(z)
+```
+
+```{r}
+seq(1,100, by=5)
+```
+```{r}
+cats
+```
+```{r}
+str(cats$coat)
+```
+
+```{r}
+coats <- c("tabby","tortoiseshell","black","tabby")
+coats
+```
+```{r}
+factor(coats)
+```
+
+```{r}
+categories <- factor(coats)
+class(coats)
+class(categories)
+```
+```{r}
+str(categories)
+```
+
+### Lists
+```{r}
+list_example <- list("numbers", numbers=1:10, data=TRUE)
+list_example
+```
+```{r}
+another_list<-list(1,"a",TRUE,1+1i)
+another_list
+```
+```{r}
+typeof(cats)
+```
+```{r}
+class(cats)
+```
+
+```{r}
+data.frame(list_example)
+```
+
+
+```{r}
+cats
+```
+```{r}
+cats[,3]
+```
+
+```{r}
+cats[3,]
+```
+
+```{r}
+cats[2:3,c(1,3)]
+```
+
+
+### Matricies 
+```{r}
+#a matrix is made for math
+matrix_example <-matrix(0,ncol=5,nrow=3)
+```
+```{r}
+matrix_example
+```
+
+```{r}
+typeof(matrix_example)
+```
+
+```{r}
+str(matrix_example) #turns into string
+```
+
+```{r}
+dim(matrix_example)
+```
+
+
+```{r}
+class(data.frame(matrix_example)) 
+#save as data frame:
+df_example <-data.frame(matrix_example)
+df_example
+```
+
+
+###Subsetting
+```{r}
+p <- c(2.3,6.9,4.0,23,12)
+p
+```
+
+```{r}
+names(p) <- c('a','b','c','d','e')
+p
+```
+
+
+```{r}
+p[2:4]
+```
+
+```{r}
+p[c(1,5)]
+```
+
+```{r}
+p[c(1,1,1,3,5,5)]
+```
+
+```{r}
+p[6]
+```
+
+```{r}
+p[-3] #everything but 3
+```
+
+```{r}
+p[c(-1,-5)]
+```
+
+```{r}
+p[-(2:4)]
+```
+
+```{r}
+p[c('a','c')]
+```
+
+```{r}
+p[c(T,F,T,F,T)]
+```
+
+```{r}
+#search
+p[names(p) != 'c']
+```
+
+### Factors
+```{r}
+f <- factor(c('a','b','c','d','e'))
+f
+```
+
+```{r}
+#search
+f[f =='a']
+```
+
+```{r}
+f[1:3]
+```
+
+```{r}
+f[f %in% c('b','c')]
+#% is a special operator
+```
+
+```{r}
+f[-3]
+```
+
+```{r}
+f2 <- factor(c('a','a','d','c','c'))
+f2
+```
+
+```{r}
+f2[f2=='a']
+```
+
+```{r}
+f2[f2 %in% c('a','c')]
+```
+
+```{r}
+#git pull
+```
+### Matrices Cont.
+```{r}
+set.seed(65)
+m<-matrix(rnorm(6*4), ncol=4, nrow=6)
+m
+```
+
+```{r}
+m[3:4, c(3,1)]
+```
+
+```{r}
+m[c(93,4)]
+```
+### Lists
+```{r}
+#xlist <-(a="BIOL6220" , b= seq(1 , 10 , by=0.5) , data="grade")
+#data
+```
+```{r}
+gp<- read.csv('~/BIOL6220_Fall22/practcomp2022/data/population_total.csv')
+```
+```{r}
+head(gp, n=10L)
+```
+
+```{r}
+head(gp[3], n=10L)
+
+```
+
+```{r}
+nrow(gp)
+```
+```{r}
+gp$X1799
+```
+
+```{r}
+gp[1:3,2:5]
+```
+```{r}
+gp[c(1,3), 2:5]
+```
+
+```{r}
+gp[which(gp$X2059 <= 2 & gp$X2019 >=2)]
+```
+### Conditionals and flow
+
+```{r}
+n <-10
+if (n<10) {
+  print("n is <10")
+} else if (n>10) {
+  print("n is >10")
+}else {
+  print("I love moth man")
+}
+```
+```{r}
+for (n in seq(0,20)){
+  n <-10
+  if (n<10) {
+  print("n is <10")
+  } else if (n>10) {
+  print("n is >10")
+  }else {
+  print("I love moth man")
+  }
+}
+```
+```{r}
+g<-0
+while(g<=10){
+  print(paste(g,"is less than or equal to 10"))
+  g <- g+1
+}
+```
+
+```{r}
+
+```
+## Plotting and figures
+
+```{r}
+#install.packages(("ggplot2"))
+```
+
+```{r}
+library(ggplot2)
+```
+
+```{r}
+```
+```{r}
+ggplot(data=gp, mapping=aes(x=X2000, y=X2019)) +geom_point()
+```
+
+
