@@ -477,4 +477,97 @@ library(ggplot2)
 ggplot(data=gp, mapping=aes(x=X2000, y=X2019)) +geom_point()
 ```
 
+```{r}
+library(ggplot2)
+gapminder_all <- read_csv("data/gapminder_all.csv")
+View(gapminder_all)
+```
+
+```{r}
+ggplot(data=gapminder_all,mapping=aes(x=gdpPercap_1952))+geom_point()
+```
+
+```{r}
+gapminder<-read.csv("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder_data.csv")
+```
+```{r}
+ggplot(data=gapminder, mapping=aes(x=year, y=lifeExp)) + geom_point()
+```
+
+```{r}
+ggplot(data=gapminder, mapping=aes(x=year, y=lifeExp, by=country, color=continent)) + geom_point()
+
+```
+
+```{r}
+ggplot(data=gapminder, mapping=aes(x=year, y=lifeExp, by=country, color=continent)) + geom_line(mapping=aes(color=continent))+geom_point()
+
+```
+
+```{r}
+ggplot(data=gapminder, mapping=aes(x=gdpPercap, y=lifeExp)) + geom_point(alpha=0.5)+scale_x_log10()
+#log transformed data. now, we could run a linear model
+#alpha tells us how densely packed the points are by changing the shading
+
+```
+
+```{r}
+#linear model
+ggplot(data=gapminder, mapping=aes(x=gdpPercap, y=lifeExp)) + geom_point(alpha=0.25, color="purple", size=0.9, shape=9) +scale_x_log10()+geom_smooth(method = lm, color="gold")
+
+```
+
+```{r}
+africas<-gapminder[gapminder$continent=="Africa",]
+head(africas)
+#subselecting data
+```
+```{r}
+ggplot(data=africas, mapping=aes(x=year, y=lifeExp)) +
+  geom_line(color="blue") +
+  facet_wrap(~country) +
+  theme(axis.text.x=element_text(angle=45)) +
+#changes the x axis so you can read the titles better
+  labs(
+    x="year",
+    y="Life Expectancy",
+    title="Life expectancy over time in African countries"
+  )
+# you can write code line by line as above for easier reading 
+```
+
+```{r}
+AfricanLifeExp<-ggplot(data=africas, mapping=aes(x=year, y=lifeExp)) +
+  geom_line(color="blue") +
+  facet_wrap(~country) +
+  theme(axis.text.x=element_text(angle=45)) +
+  labs(
+    x="year",
+    y="Life Expectancy",
+    title="Life expectancy over time in African countries"
+    )
+```
+```{r}
+AfricanLifeExp
+```
+```{r}
+ggsave(filename="AfricanLifeExp.png", plot=AfricanLifeExp, width=24, height = 40, dpi=300, units="cm")
+```
+
+```{r}
+pdf(file= "results/AfricanLifeExp.pdf", width=24, height = 40)
+plot(AfricanLifeExp)
+dev.off()
+#Turns off the creation of new files after its done
+```
+
+```{r}
+write.table(gapminder, file="data/gapminder_web.csv", sep=",")
+#save as csv. sep= choose what to separate by (comma, space, etc)
+```
+
+```{r}
+write.csv(africas, file="data/gapminder_web_africas.csv")
+
+```
 
